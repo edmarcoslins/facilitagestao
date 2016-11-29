@@ -6,7 +6,7 @@
  * Date: 27/11/2016
  * Time: 19:47
  */
-class servico
+class Servico
 {
     private $nome;
     private $valor;

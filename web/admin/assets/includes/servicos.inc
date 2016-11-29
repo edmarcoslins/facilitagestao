@@ -15,12 +15,6 @@
                     <input type="text" class="form-control" id="valorServico">
                 </div>
             </div>
-            <div class="col-xs-3 col-md-3">
-                <div class="form-group">
-                    <label for="descServico">Descrição</label>
-                    <input type="text" class="form-control" id="descServico">
-                </div>
-            </div>
         </div>
         <div class="row">
             <div class="col-xs-3 col-md-3">
@@ -77,12 +71,6 @@
                 <div class="form-group">
                     <label for="valorEditarServico">Valor</label>
                     <input type="text" class="form-control" id="valorEditarServico">
-                </div>
-            </div>
-            <div class="col-xs-3 col-md-3">
-                <div class="form-group">
-                    <label for="descEditarServico">Descrição</label>
-                    <input type="text" class="form-control" id="descEditarServico">
                 </div>
             </div>
         </div>

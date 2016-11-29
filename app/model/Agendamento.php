@@ -6,7 +6,7 @@
  * Date: 27/11/2016
  * Time: 19:50
  */
-class agendamento
+class Agendamento
 {
     private $cliente;
     private $servico;

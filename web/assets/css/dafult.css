@@ -1,0 +1,11 @@
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+html,body{
+    background: url('../images/background.jpg') no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}

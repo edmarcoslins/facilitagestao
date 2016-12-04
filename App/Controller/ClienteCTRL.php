@@ -5,34 +5,67 @@
 
 namespace App\Controller;
 
-/**
- * Created by PhpStorm.
- * User: Edmarcos
- * Date: 27/11/2016
- * Time: 19:54
- */
+use App\Model\Conexao;
+use App\Model\Cliente;
+
 class ClienteCTRL
 {
-
-    /**
-     * clienteCTRL constructor.
-     */
-    public function __construct()
+    public function cadastrar($requisicao)
     {
         $cliente = new Cliente();
+        $cliente->setNome($requisicao['nome']);
+        $cliente->setEmail($requisicao['email']);
+        $cliente->setTelefone($requisicao['telefone']);
+        $cliente->setLogradouro($requisicao['logradouro']);
+        $cliente->setNumero($requisicao['numero']);
+        $cliente->setBairro($requisicao['bairro']);
+        $cliente->setCidade($requisicao['cidade']);
+        $cliente->setUf($requisicao['uf']);
+
+        return $cliente->salvar();
     }
 
-    public function cadastrar()
+    public function editar($requisicao)
     {
-        $conex = new Conexao();
-        $connection = $conex->getConnection();
-        $res = $connection->exec("INSERT INTO cliente (nome) VALUES ('TESTE')");
-        if($res) {
-            // SUCESSO
-        } else {
-            // Falhou
+        $cliente = new Cliente();
+
+        $cliente->setCod($requisicao['cod']);
+        $cliente->setNome($requisicao['nome']);
+        $cliente->setEmail($requisicao['email']);
+        $cliente->setTelefone($requisicao['telefone']);
+        $cliente->setLogradouro($requisicao['logradouro']);
+        $cliente->setNumero($requisicao['numero']);
+        $cliente->setBairro($requisicao['bairro']);
+        $cliente->setCidade($requisicao['cidade']);
+        $cliente->setUf($requisicao['uf']);
+
+        return $cliente->salvar();
+    }
+
+    public function deletar($requisicao)
+    {
+        $cod = $requisicao['cod'];
+
+        if(count($cod) == 0) {
+            return false;
         }
-        return 'ok';
+
+        $cliente = Cliente::buscar($cod);
+
+        if ($cliente) {
+            if ($cliente->deletar()) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    public function listar($requisicao = null)
+    {
+        $clientes = Cliente::todos();
+
+        return $clientes;
     }
 
 }

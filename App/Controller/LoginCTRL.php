@@ -1,6 +1,8 @@
 <?php
 
-require_once '../app/model/Login.php';
+//require_once '../App/Model/Login.php';
+namespace App\Controller;
+use App\Model\Login;
 
 /**
  * Created by PhpStorm.

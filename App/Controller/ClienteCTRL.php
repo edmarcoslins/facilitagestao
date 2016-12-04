@@ -1,7 +1,9 @@
 <?php
 
-require_once '../app/model/Cliente.php';
-require_once '../app/model/Conexao.php';
+//require_once '../App/Model/Cliente.php';
+//require_once '../App/Model/Conexao.php';
+
+namespace App\Controller;
 
 /**
  * Created by PhpStorm.

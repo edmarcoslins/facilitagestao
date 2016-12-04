@@ -1,3 +1,6 @@
+<?php
+    require __DIR__.'./../../vendor/autoload.php';
+?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -5,7 +8,6 @@
     <title>Facilita Gestão Administração</title>
     <link rel="stylesheet" href="../bootstrap-4.0.0-alpha.5-dist/css/bootstrap.css">
     <link rel="stylesheet" href="./assets/css/dafult.css">
-    <script src="../bootstrap-4.0.0-alpha.5-dist/js/bootstrap.js"></script>
 </head>
 <body>
 <div class="container">
@@ -35,19 +37,22 @@
 
     //Se for botão 'Clientes'
     if(($action == 1) || (!isset($action))) {
-        include './assets/includes/cliente.inc';
+        include './assets/includes/cliente.inc.php';
     }
 
     if($action == 2) {
-        include './assets/includes/servicos.inc';
+        include './assets/includes/servicos.inc.php';
     }
 
     if($action == 3) {
-        include './assets/includes/agendamento.inc';
+        include './assets/includes/agendamento.inc.php';
     }
 
     ?>
 
 </div>
+    <script src="../assets/tether-1.3.3/dist/js/tether.min.js"></script>
+    <script src="../assets/jQuery/jquery-2.2.3.min.js"></script>
+    <script src="../bootstrap-4.0.0-alpha.5-dist/js/bootstrap.js"></script>
 </body>
 </html>

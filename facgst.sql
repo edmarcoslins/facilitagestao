@@ -44,8 +44,7 @@ CREATE TABLE IF NOT EXISTS `agendamento` (
   `cod` int(11) NOT NULL AUTO_INCREMENT,
   `cliente` int(3) NOT NULL,
   `servico` int(2) NOT NULL,
-  `data` date NOT NULL,
-  `hora` time NOT NULL,
+  `data` datetime NOT NULL,
   PRIMARY KEY (`cod`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
@@ -76,8 +75,8 @@ CREATE TABLE IF NOT EXISTS `cliente` (
 
 CREATE TABLE IF NOT EXISTS `servico` (
   `cod` int(2) NOT NULL AUTO_INCREMENT,
-  `nome` int(11) NOT NULL,
-  `valor` double(6,2) NOT NULL,
+  `nome` varchar(50) NOT NULL,
+  `valor` decimal(15,2) NOT NULL,
   PRIMARY KEY (`cod`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 

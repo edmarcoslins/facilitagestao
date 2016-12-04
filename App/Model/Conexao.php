@@ -8,6 +8,8 @@ namespace App\Model;
  * Date: 27/11/2016
  * Time: 20:29
  */
+
+use \PDO;
 class Conexao
 {
     private $connect;
@@ -22,7 +24,8 @@ class Conexao
     public function __construct()
     {
         try {
-            $this->connect = new PDO('mysql:host=localhost;dbname=facgst', 'root', '');
+            $this->connect = new PDO('mysql:localhost=localhost;dbname=facgst', 'homestead', 'secret');
+            $this->connect->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         } catch(PDOException $e) {
             die($e->getMessage());
         }

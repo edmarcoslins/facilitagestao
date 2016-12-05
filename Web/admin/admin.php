@@ -1,6 +1,8 @@
 <?php
     session_start();
     require __DIR__.'./../../vendor/autoload.php';
+    $dotenv = new Dotenv\Dotenv(__DIR__. '/../../');
+    $dotenv->load();
 
     if( !isset($_SESSION['cod']) or !isset($_SESSION['nome']) or !isset($_SESSION['email']) or !isset($_SESSION['senha']) ) {
         echo "<meta HTTP-EQUIV='Refresh' CONTENT='0;/Web/admin/index.php'>";
@@ -34,8 +36,7 @@
             <li class="nav-item">
                 <a class="nav-link text-white" href="admin.php?action=3">Agendamentos</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link text-white" href="admin.php?logout=true">Loggout</a>
+            <li class="nav-item"> <a class="nav-link text-white" href="admin.php?logout=true">Loggout</a>
             </li>
         </ul>
     </nav>

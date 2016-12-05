@@ -3,6 +3,9 @@
 
     use App\Controller\LoginCTRL;
     use App\Model\Login;
+    $dotenv = new Dotenv\Dotenv(__DIR__);
+    $dotenv->load();
+    die(var_dump($_ENV));
 ?>
 
 

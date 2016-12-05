@@ -23,8 +23,13 @@ class Conexao
      */
     public function __construct()
     {
+        $host = getenv("DATABASE_HOST");
+        $dbname = getenv("DATABASE_BANCO");
+        $user = getenv("DATABASE_USER");
+        $pass = getenv("DATABASE_PASSWORD");
+
         try {
-            $this->connect = new PDO('mysql:localhost=localhost;dbname=facgst', 'homestead', 'secret');
+            $this->connect = new PDO("mysql:localhost=$host;dbname=$dbname", $user, $pass);
             $this->connect->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         } catch(PDOException $e) {
             die($e->getMessage());

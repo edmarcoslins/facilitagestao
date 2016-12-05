@@ -22,10 +22,8 @@ class Login
      * @param $email
      * @param $senha
      */
-    public function __construct($cod, $nome, $email, $senha)
+    public function __construct( $email, $senha)
     {
-        $this->cod = $cod;
-        $this->nome = $nome;
         $this->email = $email;
         $this->senha = $senha;
     }

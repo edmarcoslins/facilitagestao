@@ -24,7 +24,7 @@ class Conexao
     public function __construct()
     {
         try {
-            $this->connect = new PDO('mysql:localhost=localhost;dbname=facgst', 'homestead', 'secret');
+            $this->connect = new PDO('mysql:localhost=localhost;dbname=facgst', 'root', '');
             $this->connect->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         } catch(PDOException $e) {
             die($e->getMessage());

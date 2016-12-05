@@ -266,10 +266,10 @@ if(isset($_POST['tipo-form'])) {
                 <th>Email</th>
                 <th>Telefone</th>
                 <th>Logradouro</th>
-                <th>Numero</th>
-                <th>bairro</th>
+                <th>NÚmero</th>
+                <th>Bairro</th>
                 <th>Cidade</th>
-                <th>Uf</th>
+                <th>UF</th>
             </tr>
         </thead>
         <tbody>

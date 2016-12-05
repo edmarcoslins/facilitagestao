@@ -87,7 +87,7 @@ if(isset($_POST['tipo-form'])) {
             </div>
             <div class="col-xs-3 col-md-3">
                 <div class="form-group">
-                    <label for="servicoAgendamento">agendamento</label>
+                    <label for="servicoAgendamento">Serviços</label>
                     <select name="servico" class="form-control">
                     <?php foreach(Servico::todos() as $servico): ?>
                         <option value="<?php echo $servico->getCod(); ?>"><?php echo $servico->getNome(); ?></option>

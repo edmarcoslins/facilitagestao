@@ -1,8 +1,8 @@
 <?php
 
-//require_once '../App/Model/Login.php';
 namespace App\Controller;
 use App\Model\Login;
+use App\Model\Conexao;
 
 /**
  * Created by PhpStorm.
@@ -12,20 +12,24 @@ use App\Model\Login;
  */
 class LoginCTRL
 {
-
+    private $connection;
     /**
      * clienteCTRL constructor.
      */
     public function __construct()
     {
-        $login = new Login();
+
     }
 
-    public function cadastrar()
+    public function autenticacao(Login $login)
     {
-        $conex = new Conexao();
-        $connection = $conex->getConnection();
-        $res = $connection->exec("INSERT INTO cliente (nome) VALUES ('TESTE')");
+        $conex  = new Conexao();
+        $this->connection = $conex->getConnection();
+
+        $email = $login->getEmail();
+        $senha = $login->getSenha();
+        $consulta = $this->connection->query("SELECT * FROM admin WHERE email = '$email' AND senha = $senha");
+        return $consulta;
     }
 
 }

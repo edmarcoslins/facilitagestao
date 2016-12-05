@@ -36,6 +36,7 @@ class Agendamento
 
         if ($res) {
             $agendamentoId = $this->conexao->lastInsertId();
+            $this->cod = $agendamentoId;
             foreach($this->servicos as $servico){
                 $stm = $this->conexao->prepare("INSERT INTO agendamento_servico (agendamento,servico) values(?,?)");
                 $stm->bindParam(1, $agendamentoId, PDO::PARAM_INT);
@@ -131,6 +132,11 @@ class Agendamento
         return Cliente::buscar($this->cliente)->getNome();
     }
 
+    public function getClienteEmail()
+    {
+        return Cliente::buscar($this->cliente)->getEmail();
+    }
+
     /**
      * @param mixed $cliente
      */
@@ -191,5 +197,24 @@ class Agendamento
         }, $results);
 
         return implode(", ", $results);
+    }
+
+    public function getServicosTotal()
+    {
+        $stm = $this->conexao->prepare("select servico.valor from agendamento inner join agendamento_servico on agendamento.cod = agendamento_servico.agendamento inner join servico on agendamento_servico.servico = servico.cod where agendamento.cod = ?");
+        $stm->bindParam(1, $this->cod, PDO::PARAM_INT);
+
+        $stm->execute();
+        $results = $stm->fetchAll(PDO::FETCH_ASSOC);
+        $results = array_map(function($r) {
+            return $r['valor'];
+        }, $results);
+
+        $total = 0;
+        foreach($results as $valor) {
+            $total += $valor;
+        }
+
+        return 'R$ '. number_format($total, 2, ',', '.');
     }
 }

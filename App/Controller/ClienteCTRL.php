@@ -22,7 +22,13 @@ class ClienteCTRL
         $cliente->setCidade($requisicao['cidade']);
         $cliente->setUf($requisicao['uf']);
 
-        return $cliente->salvar();
+        $res = $cliente->salvar();
+
+        if ($res) {
+            enviarEmail($cliente->getEmail(), "Cadastro Realizado - Facilita Gestão", "Cadastro realizado com sucesso!");
+        }
+
+        return $res;
     }
 
     public function editar($requisicao)

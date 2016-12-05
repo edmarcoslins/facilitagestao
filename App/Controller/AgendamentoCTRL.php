@@ -14,7 +14,13 @@ class AgendamentoCTRL
         $agendamento->setServicos($requisicao['servicos']);
         $agendamento->setData($requisicao['data']);
 
-        return $agendamento->salvar();
+        $res = $agendamento->salvar();
+
+        if ($res) {
+            enviarEmail($agendamento->getClienteEmail(), "Agendamento Realizado - Facilita Gestão", "<h3>Agendamento realizado com sucesso!</h3><br><br>Código de agendamento: {$agendamento->getCod()}<br>Servicos: {$agendamento->getServicos()}<br>Total dos servicos: {$agendamento->getServicosTotal()}<br>Data: {$agendamento->getDataFormated()}<br>Hora: {$agendamento->getHoraFormated()}");
+        }
+
+        return $res;
     }
 
     public function editar($requisicao)
@@ -41,6 +47,7 @@ class AgendamentoCTRL
 
         if ($agendamento) {
             if ($agendamento->deletar()) {
+                enviarEmail($agendamento->getClienteEmail(), "Agendamento Cancelado - Facilita Gestão", "<h3>Seu agendamento foi cancelado.</h3><br>Data: {$agendamento->getDataFormated()}<br>Hora: {$agendamento->getHoraFormated()}");
                 return true;
             }
         }

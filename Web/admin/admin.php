@@ -4,6 +4,25 @@
     $dotenv = new Dotenv\Dotenv(__DIR__. '/../../');
     $dotenv->load();
 
+    function enviarEmail($to, $assunto, $msg) {
+        try {
+            $transport = Swift_SmtpTransport::newInstance('smtp.gmail.com', 465, "ssl")
+                  ->setUsername(getenv("GMAIL_EMAIL"))
+                  ->setPassword(getenv("GMAIL_SENHA"));
+
+            $mailer = Swift_Mailer::newInstance($transport);
+            $message = Swift_Message::newInstance($assunto)
+              ->setFrom(array(getenv("GMAIL_EMAIL") => 'Facilita Gestão'))
+              ->setTo(array($to))
+              ->setBody($msg, 'text/html');
+            return $mailer->send($message);
+        } catch(\Exception $e) {
+            echo $e->getMessage();
+            return false;
+        }
+
+    }
+
     if( !isset($_SESSION['cod']) or !isset($_SESSION['nome']) or !isset($_SESSION['email']) or !isset($_SESSION['senha']) ) {
         echo "<meta HTTP-EQUIV='Refresh' CONTENT='0;/Web/admin/index.php'>";
     } else {

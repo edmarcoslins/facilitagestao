@@ -2,8 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="941f8a04-d55f-4691-886c-efb09f7f6f8c" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web/admin/admin.php" afterPath="$PROJECT_DIR$/Web/admin/admin.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web/admin/assets/includes/agendamento.inc.php" afterPath="$PROJECT_DIR$/Web/admin/assets/includes/agendamento.inc.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web/admin/assets/includes/cliente.inc.php" afterPath="$PROJECT_DIR$/Web/admin/assets/includes/cliente.inc.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web/admin/assets/includes/servicos.inc.php" afterPath="$PROJECT_DIR$/Web/admin/assets/includes/servicos.inc.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web/admin/index.php" afterPath="$PROJECT_DIR$/Web/admin/index.php" />
     </list>
     <ignored path="facilitagestao.iws" />
@@ -25,11 +26,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="admin.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Web/admin/admin.php">
+      <file leaf-file-name="cliente.inc.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Web/admin/assets/includes/cliente.inc.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="31" column="95" selection-start-line="31" selection-start-column="95" selection-end-line="31" selection-end-column="95" />
+            <state relative-caret-position="445">
+              <caret line="288" column="16" selection-start-line="288" selection-start-column="16" selection-end-line="288" selection-end-column="16" />
               <folding />
             </state>
           </provider>
@@ -78,13 +79,14 @@
         <option value="$PROJECT_DIR$/App/Model/Cliente.php" />
         <option value="$PROJECT_DIR$/App/Model/Servico.php" />
         <option value="$PROJECT_DIR$/App/Model/Conexao.php" />
-        <option value="$PROJECT_DIR$/Web/admin/assets/includes/cliente.inc.php" />
-        <option value="$PROJECT_DIR$/Web/admin/assets/includes/agendamento.inc.php" />
         <option value="$PROJECT_DIR$/App/Model/Login.php" />
         <option value="$PROJECT_DIR$/App/Controller/LoginCTRL.php" />
-        <option value="$PROJECT_DIR$/Web/admin/index.php" />
         <option value="$PROJECT_DIR$/.env" />
         <option value="$PROJECT_DIR$/Web/admin/admin.php" />
+        <option value="$PROJECT_DIR$/Web/admin/index.php" />
+        <option value="$PROJECT_DIR$/Web/admin/assets/includes/agendamento.inc.php" />
+        <option value="$PROJECT_DIR$/Web/admin/assets/includes/servicos.inc.php" />
+        <option value="$PROJECT_DIR$/Web/admin/assets/includes/cliente.inc.php" />
       </list>
     </option>
   </component>
@@ -347,12 +349,12 @@
       <workItem from="1480470762462" duration="316000" />
       <workItem from="1480823165083" duration="16832000" />
       <workItem from="1480915271353" duration="1323000" />
-      <workItem from="1480916738347" duration="53000" />
+      <workItem from="1480916738347" duration="1057000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="49731000" />
+    <option name="totallyTimeSpent" value="50735000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -535,27 +537,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Web/admin/assets/includes/servicos.inc.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="22" selection-start-line="2" selection-start-column="22" selection-end-line="2" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Web/admin/assets/includes/cliente.inc.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3460">
-          <caret line="275" column="71" selection-start-line="275" selection-start-column="71" selection-end-line="275" selection-end-column="71" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/Web/admin/assets/includes/agendamento.inc.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="81" column="48" selection-start-line="81" selection-start-column="48" selection-end-line="81" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/App/Controller/AgendamentoCTRL.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
@@ -632,16 +613,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Web/admin/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="64" column="84" selection-start-line="64" selection-start-column="84" selection-end-line="64" selection-end-column="84" />
-          <folding>
-            <element signature="e#62#91#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/App/Model/Cliente.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
@@ -656,10 +627,44 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/Web/admin/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="31" column="26" selection-start-line="31" selection-start-column="26" selection-end-line="31" selection-end-column="26" />
+          <folding>
+            <element signature="e#62#91#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/Web/admin/admin.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
+        <state relative-caret-position="68">
           <caret line="31" column="95" selection-start-line="31" selection-start-column="95" selection-end-line="31" selection-end-column="95" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Web/admin/assets/includes/agendamento.inc.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="146" column="107" selection-start-line="146" selection-start-column="107" selection-end-line="146" selection-end-column="107" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Web/admin/assets/includes/servicos.inc.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="833">
+          <caret line="152" column="22" selection-start-line="152" selection-start-column="22" selection-end-line="152" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Web/admin/assets/includes/cliente.inc.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="445">
+          <caret line="288" column="16" selection-start-line="288" selection-start-column="16" selection-end-line="288" selection-end-column="16" />
           <folding />
         </state>
       </provider>

@@ -28,13 +28,13 @@
                 <div class="col-xs-3 col-md-3">
                     <div class="form-group">
                         <label for="emailLogin">E-mail</label>
-                        <input type="text" name="login" class="form-control" id="emailLogin">
+                        <input type="email" name="login" class="form-control" id="emailLogin" required>
                     </div>
                 </div>
                 <div class="col-xs-3 col-md-3">
                     <div class="form-group">
                         <label for="valorServico">Senha</label>
-                        <input type="password" name="senha" class="form-control" id="senhaLogin">
+                        <input type="password" name="senha" class="form-control" id="senhaLogin" required>
                     </div>
                 </div>
             </div>

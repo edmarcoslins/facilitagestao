@@ -88,7 +88,7 @@ if(isset($_POST['tipo-form'])) {
             <div class="col-xs-3 col-md-3">
                 <div class="form-group">
                     <label for="servicoAgendamento">Serviços</label>
-                    <select multiple name="servicos[]" class="form-control">
+                    <select multiple name="servicos[]" class="form-control" required>
                     <?php foreach(Servico::todos() as $servico): ?>
                         <option value="<?php echo $servico->getCod(); ?>"><?php echo $servico->getNome(); ?></option>
                     <?php endforeach; ?>
@@ -121,7 +121,7 @@ if(isset($_POST['tipo-form'])) {
             <div class="col-xs-3 col-md-3">
                 <div class="form-group">
                     <label for="codDeleteServico">Código</label>
-                    <input name="cod" type="text" class="form-control" id="codDeleteServico">
+                    <input name="cod" type="text" class="form-control" id="codDeleteServico" required>
                 </div>
             </div>
         </div>
@@ -144,7 +144,7 @@ if(isset($_POST['tipo-form'])) {
             <div class="col-xs-3 col-md-3">
                 <div class="form-group">
                     <label for="dataListarAgendamento">Data</label>
-                    <input name="data" type="date" class="form-control" id="dataListarAgendamento">
+                    <input name="data" type="date" class="form-control" id="dataListarAgendamento" required>
                 </div>
             </div>
         </div>

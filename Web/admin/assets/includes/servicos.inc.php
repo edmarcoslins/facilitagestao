@@ -93,13 +93,13 @@ if(isset($_POST['tipo-form'])) {
             <div class="col-xs-3 col-md-3">
                 <div class="form-group">
                     <label for="nomeServico">Nome</label>
-                    <input name="nome" type="text" class="form-control" id="nomeServico">
+                    <input name="nome" type="text" class="form-control" id="nomeServico" required>
                 </div>
             </div>
             <div class="col-xs-3 col-md-3">
                 <div class="form-group">
                     <label for="valorServico">Valor</label>
-                    <input name="valor" type="text" class="form-control" id="valorServico">
+                    <input name="valor" type="text" class="form-control" id="valorServico" required>
                 </div>
             </div>
         </div>
@@ -125,7 +125,7 @@ if(isset($_POST['tipo-form'])) {
             <div class="col-xs-3 col-md-3">
                 <div class="form-group">
                     <label for="codDeleteServico">Código</label>
-                    <input name="cod" type="text" class="form-control" id="codDeleteServico">
+                    <input name="cod" type="text" class="form-control" id="codDeleteServico" required>
                 </div>
             </div>
         </div>
@@ -148,8 +148,8 @@ if(isset($_POST['tipo-form'])) {
             <div class="col-xs-3 col-md-3">
                 <div class="form-group">
                     <label for="codEditarCliente">Código</label>
-                    <input name="cod" type="text" class="form-control" id="codEditarCliente">
-                    <button type="submit" class="btn btn-success">Buscar</button>
+                    <input name="cod" type="text" class="form-control" id="codEditarCliente" required><br>
+                    <button type="submit" class="btn btn-success">Buscar</button><br><br>
                 </div>
             </div>
         </div>
@@ -161,13 +161,13 @@ if(isset($_POST['tipo-form'])) {
             <div class="col-xs-3 col-md-3">
                 <div class="form-group">
                     <label for="nomeEditarServico">Nome</label>
-                    <input name="nome" type="text" class="form-control" id="nomeEditarServico" value="<?php echo $tempServico->getNome(); ?>">
+                    <input name="nome" type="text" class="form-control" id="nomeEditarServico" value="<?php echo $tempServico->getNome(); ?>" required>
                 </div>
             </div>
             <div class="col-xs-3 col-md-3">
                 <div class="form-group">
                     <label for="valorEditarServico">Valor</label>
-                    <input name="valor" type="text" class="form-control" id="valorEditarServico" value="<?php echo $tempServico->getValor(); ?>">
+                    <input name="valor" type="text" class="form-control" id="valorEditarServico" value="<?php echo $tempServico->getValor(); ?>" required>
                 </div>
             </div>
         </div>

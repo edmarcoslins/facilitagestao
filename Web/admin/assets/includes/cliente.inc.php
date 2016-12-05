@@ -92,7 +92,7 @@ if(isset($_POST['tipo-form'])) {
             <div class="col-xs-3 col-md-3">
                 <div class="form-group">
                     <label for="nomeCliente">Nome</label>
-                    <input name="nome" type="text" class="form-control" id="nomeCliente">
+                    <input name="nome" type="text" class="form-control" id="nomeCliente" required>
                 </div>
             </div>
             <div class="col-xs-3 col-md-3">
@@ -104,7 +104,7 @@ if(isset($_POST['tipo-form'])) {
             <div class="col-xs-3 col-md-3">
                 <div class="form-group">
                     <label for="telCliente">Telefone</label>
-                    <input name="telefone" type="tel" class="form-control" id="telCliente">
+                    <input name="telefone" type="tel" class="form-control" id="telCliente" required>
                 </div>
             </div>
             <div class="col-xs-3 col-md-3">
@@ -160,7 +160,7 @@ if(isset($_POST['tipo-form'])) {
             <div class="col-xs-3 col-md-3">
                 <div class="form-group">
                     <label for="codDeleteCliente">Código</label>
-                    <input name="cod" type="text" class="form-control" id="codDeleteCliente">
+                    <input name="cod" type="text" class="form-control" id="codDeleteCliente" required>
                 </div>
             </div>
         </div>
@@ -183,7 +183,7 @@ if(isset($_POST['tipo-form'])) {
             <div class="col-xs-3 col-md-3">
                 <div class="form-group">
                     <label for="codEditarCliente">Código</label>
-                    <input name="cod" type="text" class="form-control" id="codEditarCliente">
+                    <input name="cod" type="text" class="form-control" id="codEditarCliente" required>
                     <button type="submit" class="btn btn-success">Buscar</button>
                 </div>
             </div>
@@ -196,7 +196,7 @@ if(isset($_POST['tipo-form'])) {
             <div class="col-xs-3 col-md-3">
                 <div class="form-group">
                     <label for="nomeEditarCliente">Nome</label>
-                    <input name="nome" type="text" class="form-control" id="nomeEditarCliente" value="<?php echo $tempCliente->getNome(); ?>">
+                    <input name="nome" type="text" class="form-control" id="nomeEditarCliente" value="<?php echo $tempCliente->getNome(); ?>" required>
                 </div>
             </div>
             <div class="col-xs-3 col-md-3">
@@ -208,7 +208,7 @@ if(isset($_POST['tipo-form'])) {
             <div class="col-xs-3 col-md-3">
                 <div class="form-group">
                     <label for="telEditarCliente">Telefone</label>
-                    <input name="telefone" type="tel" class="form-control" id="telEditarCliente" value="<?php echo $tempCliente->getTelefone(); ?>">
+                    <input name="telefone" type="tel" class="form-control" id="telEditarCliente" value="<?php echo $tempCliente->getTelefone(); ?>" required>
                 </div>
             </div>
             <div class="col-xs-3 col-md-3">
@@ -266,7 +266,7 @@ if(isset($_POST['tipo-form'])) {
                 <th>Email</th>
                 <th>Telefone</th>
                 <th>Logradouro</th>
-                <th>NÚmero</th>
+                <th>Número</th>
                 <th>Bairro</th>
                 <th>Cidade</th>
                 <th>UF</th>

@@ -43,7 +43,6 @@ CREATE TABLE IF NOT EXISTS `admin` (
 CREATE TABLE IF NOT EXISTS `agendamento` (
   `cod` int(11) NOT NULL AUTO_INCREMENT,
   `cliente` int(3) NOT NULL,
-  `servico` int(2) NOT NULL,
   `data` datetime NOT NULL,
   PRIMARY KEY (`cod`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
@@ -80,6 +79,18 @@ CREATE TABLE IF NOT EXISTS `servico` (
   PRIMARY KEY (`cod`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
+-- --------------------------------------------------------
+
+--
+-- Estrutura da tabela `agendamento_servico`
+--
+
+CREATE TABLE IF NOT EXISTS `agendamento_servico` (
+  `cod` int(2) NOT NULL AUTO_INCREMENT,
+  `agendamento` int(2) NOT NULL,
+  `servico` int(2) NOT NULL,
+  PRIMARY KEY (`cod`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

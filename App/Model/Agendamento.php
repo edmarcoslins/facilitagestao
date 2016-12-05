@@ -16,7 +16,7 @@ class Agendamento
 {
     private $cod;
     private $cliente;
-    private $servico = [];
+    private $servicos = [];
     private $data;
 
     public function __construct()
@@ -27,22 +27,38 @@ class Agendamento
 
     public function salvar()
     {
-        die(var_dump($this->servico));
-        $stm = $this->conexao->prepare("INSERT INTO agendamento (cliente,servico,data) values(?,?,?)");
+        $stm = $this->conexao->prepare("INSERT INTO agendamento (cliente,data) values(?,?)");
 
         $stm->bindParam(1, $this->cliente, PDO::PARAM_INT);
-        $stm->bindParam(2, $this->servico, PDO::PARAM_INT);
-        $stm->bindParam(3, $this->data, PDO::PARAM_STR);
+        $stm->bindParam(2, $this->data, PDO::PARAM_STR);
 
-        return $stm->execute();
+        $res = $stm->execute();
+
+        if ($res) {
+            $agendamentoId = $this->conexao->lastInsertId();
+            foreach($this->servicos as $servico){
+                $stm = $this->conexao->prepare("INSERT INTO agendamento_servico (agendamento,servico) values(?,?)");
+                $stm->bindParam(1, $agendamentoId, PDO::PARAM_INT);
+                $stm->bindParam(2, $servico, PDO::PARAM_INT);
+                $stm->execute();
+            }
+
+            return true;
+        }
+
+        return false;
     }
 
     public function deletar()
     {
-        $stm = $this->conexao->prepare("DELETE FROM agendamento where cod = ?");
-        $stm->bindParam(1, $this->cod, PDO::PARAM_STR);
+        $stm = $this->conexao->prepare("DELETE FROM agendamento_servico where agendamento = ?");
+        $stm->bindParam(1, $this->cod, PDO::PARAM_INT);
+        $stm->execute();
 
-        return $stm->execute();
+        $stm2 = $this->conexao->prepare("DELETE FROM agendamento where cod = ?");
+        $stm2->bindParam(1, $this->cod, PDO::PARAM_INT);
+
+        return $stm2->execute();
     }
 
     public static function buscarPorCod($cod)
@@ -61,7 +77,6 @@ class Agendamento
 
             $agendamento->setCod($result['cod']);
             $agendamento->setCliente($result['cliente']);
-            $agendamento->setServico($result['servico']);
             $agendamento->setData($result['data']);
 
             return $agendamento;
@@ -76,7 +91,7 @@ class Agendamento
         $conexao = $conex->getConnection();
         $agendamentos = [];
 
-        $stm = $conexao->prepare("SELECT * FROM agendamento where data between ? and ?");
+        $stm = $conexao->prepare("SELECT agendamento.* FROM agendamento where data between ? and ?");
         $dataFrom = $data . ' 00:00:00';
         $dataTo = $data . ' 23:59:59';
 
@@ -91,7 +106,6 @@ class Agendamento
 
             $agendamento->setCod($result['cod']);
             $agendamento->setCliente($result['cliente']);
-            $agendamento->setServico($result['servico']);
             $agendamento->setData($result['data']);
 
             $agendamentos[] = $agendamento;
@@ -160,13 +174,22 @@ class Agendamento
         return $hora .':'. $minuto;
     }
 
-    public function setServico($servico)
+    public function setServicos($servicos)
     {
-        $this->servico = $servico;
+        $this->servicos = $servicos;
     }
 
-    public function getServico()
+    public function getServicos()
     {
-        return Servico::buscar($this->servico)->getNome();
+        $stm = $this->conexao->prepare("select servico.nome from agendamento inner join agendamento_servico on agendamento.cod = agendamento_servico.agendamento inner join servico on agendamento_servico.servico = servico.cod where agendamento.cod = ?");
+        $stm->bindParam(1, $this->cod, PDO::PARAM_INT);
+
+        $stm->execute();
+        $results = $stm->fetchAll(PDO::FETCH_ASSOC);
+        $results = array_map(function($r) {
+            return $r['nome'];
+        }, $results);
+
+        return implode(", ", $results);
     }
 }

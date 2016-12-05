@@ -9,8 +9,9 @@ class AgendamentoCTRL
     public function cadastrar($requisicao)
     {
         $agendamento = new Agendamento();
+
         $agendamento->setCliente($requisicao['cliente']);
-        $agendamento->setServico($requisicao['servico']);
+        $agendamento->setServicos($requisicao['servicos']);
         $agendamento->setData($requisicao['data']);
 
         return $agendamento->salvar();

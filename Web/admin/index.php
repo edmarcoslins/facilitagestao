@@ -54,13 +54,13 @@
                 $login = new LoginCTRL();
                 $res = $login->autenticacao($admin);
                 $linha = $res->fetch(PDO::FETCH_ASSOC);
-                if($linha[cod] != null){
-                    session_start("access");
+                if($linha["cod"] != null){
+                    session_start();
                     $_SESSION['cod'] = $linha['cod'];
                     $_SESSION['nome'] = $linha['nome'];
                     $_SESSION['email'] = $linha['email'];
                     $_SESSION['senha'] = $linha['senha'];
-                    echo "<meta HTTP-EQUIV='Refresh' CONTENT='0;URL=http://localhost:8080/facilitagestao/web/admin/admin.php'>";
+                    echo "<meta HTTP-EQUIV='Refresh' CONTENT='0;URL=/Web/admin/admin.php'>";
                 }
             }
         }

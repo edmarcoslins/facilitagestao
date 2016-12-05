@@ -1,14 +1,14 @@
 <?php
-    session_start("access");
+    session_start();
     require __DIR__.'./../../vendor/autoload.php';
 
     if( !isset($_SESSION['cod']) or !isset($_SESSION['nome']) or !isset($_SESSION['email']) or !isset($_SESSION['senha']) ) {
-        echo "<meta HTTP-EQUIV='Refresh' CONTENT='0;http://localhost:8080/facilitagestao/web/admin/index.php'>";
+        echo "<meta HTTP-EQUIV='Refresh' CONTENT='0;/Web/admin/index.php'>";
     } else {
         @$actionLogout = $_GET['logout'];
         if($actionLogout == true) {
             session_destroy();
-            echo "<meta HTTP-EQUIV='Refresh' CONTENT='0;http://localhost:8080/facilitagestao/web/admin/index.php'>";
+            echo "<meta HTTP-EQUIV='Refresh' CONTENT='0;/Web/admin/index.php'>";
         }
 ?>
 <!DOCTYPE html>

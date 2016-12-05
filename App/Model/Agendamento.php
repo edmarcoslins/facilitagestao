@@ -16,7 +16,7 @@ class Agendamento
 {
     private $cod;
     private $cliente;
-    private $servico;
+    private $servico = [];
     private $data;
 
     public function __construct()
@@ -27,6 +27,7 @@ class Agendamento
 
     public function salvar()
     {
+        die(var_dump($this->servico));
         $stm = $this->conexao->prepare("INSERT INTO agendamento (cliente,servico,data) values(?,?,?)");
 
         $stm->bindParam(1, $this->cliente, PDO::PARAM_INT);

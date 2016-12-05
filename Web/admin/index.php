@@ -63,6 +63,8 @@
                     $_SESSION['email'] = $linha['email'];
                     $_SESSION['senha'] = $linha['senha'];
                     echo "<meta HTTP-EQUIV='Refresh' CONTENT='0;URL=/facilitagestao/Web/admin/admin.php'>";
+                } else {
+                    echo "<script>alert('Login Não Autenticado!');</script>";
                 }
             }
         }

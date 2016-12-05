@@ -2,9 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="941f8a04-d55f-4691-886c-efb09f7f6f8c" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web/admin/assets/includes/agendamento.inc.php" afterPath="$PROJECT_DIR$/Web/admin/assets/includes/agendamento.inc.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web/admin/assets/includes/cliente.inc.php" afterPath="$PROJECT_DIR$/Web/admin/assets/includes/cliente.inc.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web/admin/assets/includes/servicos.inc.php" afterPath="$PROJECT_DIR$/Web/admin/assets/includes/servicos.inc.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Web/admin/index.php" afterPath="$PROJECT_DIR$/Web/admin/index.php" />
     </list>
     <ignored path="facilitagestao.iws" />
@@ -26,12 +23,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="cliente.inc.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Web/admin/assets/includes/cliente.inc.php">
+      <file leaf-file-name="index.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Web/admin/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="445">
-              <caret line="288" column="16" selection-start-line="288" selection-start-column="16" selection-end-line="288" selection-end-column="16" />
-              <folding />
+            <state relative-caret-position="408">
+              <caret line="66" column="77" selection-start-line="66" selection-start-column="77" selection-end-line="66" selection-end-column="77" />
+              <folding>
+                <element signature="e#62#91#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -83,10 +82,10 @@
         <option value="$PROJECT_DIR$/App/Controller/LoginCTRL.php" />
         <option value="$PROJECT_DIR$/.env" />
         <option value="$PROJECT_DIR$/Web/admin/admin.php" />
-        <option value="$PROJECT_DIR$/Web/admin/index.php" />
         <option value="$PROJECT_DIR$/Web/admin/assets/includes/agendamento.inc.php" />
         <option value="$PROJECT_DIR$/Web/admin/assets/includes/servicos.inc.php" />
         <option value="$PROJECT_DIR$/Web/admin/assets/includes/cliente.inc.php" />
+        <option value="$PROJECT_DIR$/Web/admin/index.php" />
       </list>
     </option>
   </component>
@@ -349,12 +348,12 @@
       <workItem from="1480470762462" duration="316000" />
       <workItem from="1480823165083" duration="16832000" />
       <workItem from="1480915271353" duration="1323000" />
-      <workItem from="1480916738347" duration="1057000" />
+      <workItem from="1480916738347" duration="1662000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="50735000" />
+    <option name="totallyTimeSpent" value="51340000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -627,16 +626,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Web/admin/index.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="31" column="26" selection-start-line="31" selection-start-column="26" selection-end-line="31" selection-end-column="26" />
-          <folding>
-            <element signature="e#62#91#0#PHP" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/Web/admin/admin.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
@@ -663,9 +652,19 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Web/admin/assets/includes/cliente.inc.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="445">
-          <caret line="288" column="16" selection-start-line="288" selection-start-column="16" selection-end-line="288" selection-end-column="16" />
+        <state relative-caret-position="411">
+          <caret line="286" column="21" selection-start-line="286" selection-start-column="21" selection-end-line="286" selection-end-column="21" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Web/admin/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="66" column="77" selection-start-line="66" selection-start-column="77" selection-end-line="66" selection-end-column="77" />
+          <folding>
+            <element signature="e#62#91#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -3,7 +3,7 @@
 
     use App\Controller\LoginCTRL;
     use App\Model\Login;
-    $dotenv = new Dotenv\Dotenv(__DIR__);
+    $dotenv = new Dotenv\Dotenv(__DIR__. '/../../');
     $dotenv->load();
 ?>
 
@@ -62,7 +62,7 @@
                     $_SESSION['nome'] = $linha['nome'];
                     $_SESSION['email'] = $linha['email'];
                     $_SESSION['senha'] = $linha['senha'];
-                    echo "<meta HTTP-EQUIV='Refresh' CONTENT='0;URL=/Web/admin/admin.php'>";
+                    echo "<meta HTTP-EQUIV='Refresh' CONTENT='0;URL=/facilitagestao/Web/admin/admin.php'>";
                 }
             }
         }
